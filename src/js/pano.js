@@ -1,18 +1,17 @@
-var Util = require('./util.js');
+var Util = require('./util');
 var domain = "house/";
 domain = Util.getUrlParameter("domain") || domain;
 window.pano = {
     domain: domain
 }
 
-require('./threeRewrite.js');
-var ResourcesLoader = require('./resourceLoader.js');
-var AppParams = require('./appParams.js');
-var DomElements = require('./domElements.js');
-var VRHouseApp = require('./VRHouseApp.js');
-var Stats = require('./stats.js');
-var Debug = require('./debug.js');
-
+require('./threeRewrite');
+var ResourcesLoader = require('./resourceLoader');
+var AppParams = require('./appParams');
+var DomElements = require('./domElements');
+var VRHouseApp = require('./VRHouseApp');
+var Stats = require('./stats');
+var Debug = require('./debug');
 VRParams = {
     gazeTime: 1500,
     fov: 93

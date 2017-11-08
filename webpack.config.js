@@ -31,12 +31,15 @@ var plugins = [].concat(dev ? [] : [
     new ExtractTextPlugin('css.css')
 ]);
 
+let entryConfig = {
+    loader: './src/js/loader.js'
+};
+entryConfig[libraryName] = './src/js/pano.js';
 module.exports = {
-    entry: './src/js/entry.js',
-
+    entry: entryConfig,
     output: {
         path: BUILD_PATH,
-        filename: libraryName + '.min.js',
+        filename: '[name].min.js',
         library: libraryName,
         libraryTarget: 'umd',
         umdNamedDefine: true
