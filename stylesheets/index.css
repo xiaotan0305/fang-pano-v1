@@ -1,0 +1,307 @@
+body {
+    font-family: "PingFangSC-Regular";
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    overflow: hidden;
+}
+
+div, a, img {   /*取消块级元素在手机上点击时的阴影矩形框*/
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+h5, h6 {
+    font-weight: 500;
+    line-height: 1.1;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+h5 {
+    font-size: 14px
+}
+
+h6 {
+    font-size: 12px
+}
+
+.tip {
+    pointer-events: none;
+}
+
+.radius-div {
+    text-align: center;
+    border-radius: 5px;
+    -o-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
+
+.round-corner {
+    text-align: center;
+    border-radius: 13px;
+    -o-border-radius: 13px;
+    -ms-border-radius: 13px;
+    -moz-border-radius: 13px;
+    -webkit-border-radius: 13px;
+}
+
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+}
+
+.img-opacity {
+    opacity: 1;
+    filter: alpha(opacity=100); /* 针对 IE8 以及更早的版本 */
+}
+
+.img-opacity:hover, .img-opacity:focus {
+    opacity: 0.5;
+    filter: alpha(opacity=50); /* 针对 IE8 以及更早的版本 */
+}
+
+.img-bottom {
+    cursor: pointer;
+}
+
+.loading-trans {
+    /* Fallback for web browsers that don't support RGBa */
+    background-color: rgb(0, 0, 0);
+    /* RGBa with 0.6 opacity */
+    background-color: rgba(0, 0, 0, 0.8);
+    /* For IE 5.5 - 7*/
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);
+    /* For IE 8*/
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
+}
+
+#enterHotSpotTip {
+    width: 100%;
+    position: absolute;
+    text-align: center;
+    pointer-events: none;
+    padding: 0;
+    margin: 0;
+    visibility: hidden;
+}
+
+#debugText {
+    background-color: rgba(0, 0, 0, 0.8);
+    width: 40%;
+    height: 100%;
+    color: gainsboro;
+    position: absolute;
+    margin-left: 60%;
+    visibility: hidden;
+}
+
+.disabled {     /* 按钮禁用 */
+    opacity: 0.25;
+    filter: alpha(opacity=25); /* 针对 IE8 以及更早的版本 */
+    cursor: not-allowed;
+}
+
+.controller_right {
+    position: fixed;
+    width: 30px;
+    height: 30px;
+    right: 17px;
+    cursor: pointer;
+}
+
+.controller_right_phone {
+    position: fixed;
+    width: 40px;
+    height: 40px;
+    right: 10px;
+    cursor: pointer;
+}
+
+.controller {
+    pointer-events: auto;
+    width: 40px;
+    height: 40px;
+    margin: 5px;
+}
+
+.rightTopButton {
+    visibility: hidden;
+    position: absolute;
+    right: 2px;
+}
+
+#switch2DButton, #switch3DButton, #switchAutoButton, #largeViewSwitch2DButton, #largeViewSwitch3DButton {
+    text-decoration: none;
+    text-align: center;
+    font-size: 12px;
+    outline-offset: 0px;
+    height: 4.444444vmin;
+    line-height: 4.444444vmin;
+}
+
+.switchButton, .switchButton:focus, .switchButton:hover {
+    background: rgba(0, 0, 0, 0.5);
+    color: #e6e6e6;
+}
+
+.switchButtonPressed, .switchButtonPressed:focus, .switchButtonPressed:hover {
+    color: white;
+    background: rgba(27, 27, 27, 1);
+}
+
+#welcome {
+    background: #2d2e28;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    position: fixed;
+    align-items: center;
+    display: -webkit-flex;
+    justify-content: center;
+    pointer-events: none;
+    top: 0;
+}
+
+#loading {
+    visibility: hidden;
+    font-size: 12px;
+    width: 70px;
+    margin: 5px;
+    pointer-events: none;
+}
+
+#vrStartTip {
+    visibility: hidden;
+    font-size: 15px;
+    padding: 0px 10px;
+    margin: 10px;
+}
+
+#controlTip {
+    font-size: 15px;
+    padding: 0px 10px;
+    pointer-events: none;
+}
+
+/*防止左右滑动*/
+#controller {
+    overflow: hidden;
+}
+
+#zoomInButton {
+    background-image: url(../textures/zoomIn.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+#zoomInButton.controller_right_phone {
+    top: 10px !important;
+}
+
+#zoomInButton:hover, #zoomInButton:focus {
+    background-image: url(../textures/zoomInPress.png);
+}
+
+#zoomOutButton {
+    background-image: url(../textures/zoomOut.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+#zoomOutButton.controller_right_phone {
+    top: 60px !important;
+}
+
+#zoomOutButton:hover, #zoomOutButton:focus {
+    background-image: url(../textures/zoomOutPress.png);
+}
+
+#fullScreenButton {
+    background-image: url(../textures/fullScreen.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+#switchVRButton {
+    background-image: url(../textures/vr.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.zIndex100 {
+    z-index: 100;
+}
+
+#controller-left.pc {
+    top: 4.444444vmin;
+    left: 4.444444vmin;
+    height: 4.444444vmin;
+    outline: 1px solid #333;
+    transform: translateX(1px);
+}
+
+#controller-left.phone {
+    left: 0;
+    top: 36.8vmin;
+}
+
+#largeViewSwitchController.pc {
+    display: inline-flex;
+    position: fixed;
+    bottom: 35px;
+    left: 50vw;
+    height: 4.444444vmin;
+    outline: 1px solid #333;
+    transform: translateX(-8vmin);
+}
+
+#largeViewSwitchController.phone {
+    left: 50vw;
+    display: inline-flex;
+    position: fixed;
+    bottom: 35px;
+    transform: translate(-12.27vmin,2px);
+    outline: 1px solid rgba(0, 0, 0, 0);
+}
+
+#switchAutoButton.pc {
+    width: 9.555556vmin;
+}
+
+#switch2DButton.pc, #switch3DButton.pc, #largeViewSwitch2DButton.pc, #largeViewSwitch3DButton.pc {
+    width: 8vmin;
+}
+
+#switchAutoButton.phone, #switch2DButton.phone, #switch3DButton.phone, #largeViewSwitch2DButton.phone, #largeViewSwitch3DButton.phone {
+    width: 12.266667vmin;
+    font-size: 4vmin;
+    height: 8.533333vmin;
+    line-height: 8.533333vmin;
+}
+
+.vertical-line.pc {
+    height: 4.444444vmin;
+    background: #333;
+}
+
+.vertical-line.phone {
+    height: 8.533333vmin;
+}
+
+#vr_house_container.phone {
+    position: fixed;
+}

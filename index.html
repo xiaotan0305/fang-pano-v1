@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>123看房</title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="x5-fullscreen" content="true">
+    <meta name="full-screen" content="yes">
+
+    <!--<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />-->
+
+    <link rel="stylesheet" href="stylesheets/thumbnail.css">
+    <link rel="stylesheet" href="stylesheets/index.css">
+
+    <link rel="shortcut icon" sizes="196x196" href="textures/logo.png">
+    <link rel="apple-touch-icon" href="textures/logo.png">
+
+    <!--[if lt IE 9]>
+    <script src="js/iefix/html5.js" type="text/javascript"></script>
+    <script src="js/iefix/excanvas.min.js" type="text/javascript"></script>
+    <script src="js/iefix/selectivizr.min.js" type="text/javascript"></script>
+    <![endif]-->
+</head>
+<body>
+
+<div id="thumbnail-controller">
+    <div id="thumbnail-control-button" class="controller thumbnail_clip"></div>
+    <div id="thumbnail-list" class="background-trans">
+        <img id="naviLeft" alt="naviLeft" src="textures/naviLeft.png" class="img-bottom img-opacity" style="display: none;"/>
+        <div id="thumbnails" style="display: inline-block; white-space: nowrap;"></div>
+        <img id="naviRight" alt="naviRight" src="textures/naviRight.png" class="img-bottom img-opacity" style="display: none;"/>
+    </div>
+</div>
+
+<textarea id="debugText" class="zIndex100">log信息</textarea>
+
+<div id="controller">
+    <div id="enterHotSpotTip" class="background-trans tip zIndex100">
+        <h5 style="color: white; ">点击光柱进入房间</h5>
+    </div>
+
+    <div id="largeViewSwitchController" class="pc zIndex100" style="visibility: hidden;">
+        <a id="largeViewSwitch2DButton" class="pc switchButton switchButtonPressed" href="javascript:void(0)">2D</a>
+        <div class="vertical-line pc" style="width: 1px;"></div>
+        <a id="largeViewSwitch3DButton" class="pc switchButton" href="javascript:void(0)">3D</a>
+    </div>
+
+    <a id="enterPanoramaViewBtn" class="zIndex100"
+       style="visibility: hidden;color: white;font-size: 14px;width: 57px;text-decoration: none;cursor: pointer; position: absolute; bottom: 35px; right: 15px;">
+        <span>&lt; 返回</span>
+    </a>
+
+    <div id="controlTip" class="loading-trans radius-div tip zIndex100" style="position: fixed; display: none;">
+        <h5 style="color: white; ">拖动房型图可以观看不同角度</h5>
+        <h5 style="color: white; ">双指拖动可以缩放</h5>
+    </div>
+
+    <div id="rotationTip" class="loading-trans round-corner centered tip zIndex100" style="padding: 26px 7px 11px 7px; display: none;">
+        <img src="textures/leftArrow.png" style="width: 20px; height: auto; display: inline-block; margin-top: 20px; float: left;"/>
+        <img src="textures/mouse.png" style="width: 20px; height: auto; display: inline-block;"/>
+        <img src="textures/rightArrow.png" style="width: 20px; height: auto; display: inline-block; margin-top: 20px; float: right;"/>
+        <h6 style="color: white; ">按住鼠标可旋转</h6>
+    </div>
+
+    <div id="loading" class="loading-trans radius-div centered tip zIndex100">
+        <h5 style="color: white; ">加载中</h5>
+    </div>
+
+    <div id="exitVRTip" class="loading-trans radius-div centered tip zIndex100" style="padding: 0 10px; display: none;">
+        <h5 style="color: white; ">退出VR</h5>
+    </div>
+
+    <div id="vrStartTip" class="loading-trans radius-div centered tip zIndex100" style="width: 220px; height: 200px;">
+        <img src="textures/VRTip.png" style="width: 129px; height: auto; margin-top: 50px;">
+        <h5 style="color: white; margin-top: 10px;">请将手机放入VR眼镜中</h5>
+    </div>
+
+    <div id="controlDiv" class="zIndex100" style="position: absolute;">
+        <div id="controller-left" class="pc" style="position: fixed;display: inline-flex;visibility: hidden;">
+            <a id="switchAutoButton" class="pc switchButtonPressed" href="javascript:void(0)">自动</a>
+            <div class="vertical-line pc" style="width: 1px;"></div>
+            <a id="switch2DButton" class="pc switchButton" href="javascript:void(0)">2D</a>
+            <div class="vertical-line pc" style="width: 1px;"></div>
+            <a id="switch3DButton" class="pc switchButton" href="javascript:void(0)">3D</a>
+        </div>
+        <div id="zoomInButton" style="top:14px;" class="controller_right"></div>
+        <div id="zoomOutButton" style="top:53px;" class="controller_right disabled"></div>
+        <div id="fullScreenButton" style="top:92px; display: none;" class="controller_right"></div>
+        <div id="switchVRButton" style="top:110px; display: none;" class="controller_right_phone"></div>
+    </div>
+</div>
+
+<div id="vr_house_container"></div>
+
+<div id="welcome" class="zIndex100">
+    <div class="centered">
+        <div id="loading_bar" style="width: 238px; height: 6px; background: #d8d8d8;">
+            <div id="loading_progress_bar" style="background: #62ab00; height: 100%; width:0%"></div>
+        </div>
+        <div id="loading_tip" style="margin-top: 10px; font-size:12px; color:#fff; height: 17px; line-height:17px;">加载中，请稍候...</div>
+    </div>
+</div>
+
+<!--jquery-->
+<script src="js/jquery/jquery.1.9.1.min.js"></script>
+
+<!--vrhouse-->
+<script src="js/release/vrhouseloader.min.js"></script>
+
+</body>
+</html>

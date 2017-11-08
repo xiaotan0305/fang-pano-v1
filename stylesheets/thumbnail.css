@@ -1,0 +1,178 @@
+.thumbnail-normal {
+    position: absolute;
+    cursor: pointer;
+    border: 1px solid #ffffff;
+}
+
+.thumbnail-normal.phone {
+    border: none;
+    cursor: auto;
+}
+
+.thumbnail-normal > div:nth-child(odd) {
+    width: 88px;
+    height: 62px;
+}
+
+.thumbnail-normal.phone > div:nth-child(odd) {
+    width: 64px;
+    height: 64px;
+}
+
+.thumbnail-caption {
+    width: 100%;
+    bottom: .0rem;
+    position: absolute;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: #fff;
+}
+
+.thumbnail-caption span {
+    -webkit-font-smoothing: antialiased;
+}
+
+.thumbnail-unselected {
+    border-color: rgba(255, 255, 255, .3);
+}
+
+.thumbnail-normal.phone:after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    outline-offset: -2px;
+    outline: 2px solid #ff8700;
+}
+
+.thumbnail-normal.thumbnail-unselected:after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #000;
+    filter: alpha(opacity=30);
+    opacity: 0.3;
+    outline: none;
+}
+
+.text-overlay-bg-trans {
+    /* Fallback for web browsers that don't support RGBa */
+    background-color: rgb(0, 0, 0);
+    /* RGBa with 0.6 opacity */
+    background-color: rgba(0, 0, 0, 0.6);
+    /* For IE 5.5 - 7*/
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);
+    /* For IE 8*/
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
+}
+
+.background-trans {
+    /* Fallback for web browsers that don't support RGBa */
+    background-color: rgb(0, 0, 0);
+    /* RGBa with 0.6 opacity */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* For IE 5.5 - 7*/
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);
+    /* For IE 8*/
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
+}
+
+#thumbnail-controller {
+    z-index: 99;
+    position: fixed;
+    min-height: 34px;
+    bottom: 0;
+    padding: 1px 0 0 0;
+    margin: 0;
+    background-color: rgba(0, 0, 0, 0);
+    pointer-events: none;
+}
+
+.thumbnail_group {
+    margin: 0;
+    padding: 10px;
+    width: 90px;
+    display: inline-block;
+}
+
+.thumbnail_group.phone {
+    margin: 9px 0 9px 9px;
+    padding: 0;
+    width: 64px;
+}
+
+.thumbnail_group.phone:last-child {
+    margin-right: 9px;
+}
+
+#thumbnail-list {
+    pointer-events: auto;
+    overflow: hidden;
+    text-align: center;
+    height: 82px;
+    width: 100vw;
+}
+
+#thumbnail-list.phone {
+    position: relative;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+}
+
+#thumbnail-control-button {
+    pointer-events: auto;
+    cursor: pointer;
+    width: 36px;
+    height: 43px;
+    margin: 0 0 0 10px;
+    background-image: url(../textures/thumbnail.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+#thumbnail-control-button:hover {
+    background-image: url(../textures/thumbnailPress.png);
+}
+
+#thumbnail-control-button.phone {
+    width: 40px;
+    height: 40px;
+    margin: 0 0 0 5px;
+}
+
+#thumbnail-control-button.phone.expand {
+    background-image: url(../textures/thumbnailPhone.png);
+}
+
+#thumbnail-control-button.phone.collap {
+    background-image: url(../textures/thumbnailPhonePress.png);
+}
+
+.thumbnail_name {
+    font-size: 13px;
+}
+
+/*水平翻转*/
+.flipx {
+    -moz-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    transform: scaleX(-1);
+    /*IE*/
+    filter: FlipH;
+}
+
+#naviLeft, #naviRight {
+    width: 9px;
+    height: auto;
+    line-height: 72px;
+    vertical-align: top;
+    padding-top: 4px;
+}
