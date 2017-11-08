@@ -72,8 +72,8 @@ runVRHouseApp = function() {
         $(DomElements.vrHouseContainer).addClass("phone"),
         DomElements.zoomInButton.className = "controller_right_phone",
         DomElements.zoomOutButton.className = "controller_right_phone disabled",
-        DomElements.zoomInButton.style.backgroundImage = "url(textures/zoomInPhone.png)",
-        DomElements.zoomOutButton.style.backgroundImage = "url(textures/zoomOutPhone.png)") : $(DomElements.fullScreenButton).show(),
+        DomElements.zoomInButton.style.backgroundImage = "url(images/zoomInPhone.png)",
+        DomElements.zoomOutButton.style.backgroundImage = "url(images/zoomOutPhone.png)") : $(DomElements.fullScreenButton).show(),
         AppParams.isSingleMode || (DomElements.controllerLeft.style.visibility = "visible")
     }
     function t(e) {

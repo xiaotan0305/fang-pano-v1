@@ -1,6 +1,5 @@
 var webpack = require('webpack');
 var path = require('path');
-var autoprefixer = require('autoprefixer');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 var libraryName = 'pano';
@@ -33,7 +32,7 @@ var plugins = [].concat(dev ? [] : [
 ]);
 
 module.exports = {
-    entry: './src/' + libraryName + '.js',
+    entry: './src/js/entry.js',
 
     output: {
         path: BUILD_PATH,
@@ -63,13 +62,6 @@ module.exports = {
                 presets: ['env'],
                 plugins: ['transform-remove-strict-mode']
             }
-        },
-        {
-            test: /\.scss$/,
-            use: dev ? ['style-loader', 'css-loader', 'sass-loader'] : ExtractTextPlugin.extract({
-                use: ['css-loader?minimize&-autoprefixer', 'sass-loader']
-            }),
-            include: APP_PATH
         },
         {
             test: /\.(png|jpg)$/,

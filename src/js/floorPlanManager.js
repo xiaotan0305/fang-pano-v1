@@ -15,7 +15,7 @@ var FloorPlanManager = function() {
     this.setObject3D(e);
     var t = this;
     this.createHighlightHotSpotSprite = function() {
-        var e = ResourcesLoader.loadTexture("src/textures/hotSpotPoint_HighLight_small.png")
+        var e = ResourcesLoader.loadTexture("src/images/hotSpotPoint_HighLight_small.png")
           , t = new THREE.SpriteMaterial({
             map: e
         })
@@ -26,7 +26,7 @@ var FloorPlanManager = function() {
     }
     ,
     this.createSectorSprite = function() {
-        var e = ResourcesLoader.loadTexture("src/textures/sector.png")
+        var e = ResourcesLoader.loadTexture("src/images/sector.png")
           , t = new THREE.SpriteMaterial({
             map: e
         })
@@ -89,7 +89,7 @@ var FloorPlanManager = function() {
     ,
     this.createHotSpotsGroup = function(e) {
         var t = new THREE.Group
-          , o = ResourcesLoader.loadTexture("src/textures/hotSpotPoint_small.png")
+          , o = ResourcesLoader.loadTexture("src/images/hotSpotPoint_small.png")
           , a = new THREE.SpriteMaterial({
             map: o
         });

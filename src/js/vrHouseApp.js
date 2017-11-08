@@ -34,9 +34,9 @@ var ThumbnailManager = function (e, t) {
             $(DomElements.thumbnailList).addClass("phone")),
         $(DomElements.thumbnailControlButton).click(function () {
             "none" == DomElements.thumbnailList.style.display ? (AppParams.isPhone && (this.style.backgroundImage =
-                    "url(textures/thumbnailPhone.png)"),
+                    "url(images/thumbnailPhone.png)"),
                 $(DomElements.thumbnailList).slideDown("slow")) : (AppParams.isPhone && (this.style.backgroundImage =
-                    "url(textures/thumbnailPhonePress.png)"),
+                    "url(images/thumbnailPhonePress.png)"),
                 $(DomElements.thumbnailList).slideUp("slow"))
         })
     this.loadThumbnail = function () {
@@ -187,14 +187,14 @@ var VRHouseApp = function () {
             e)
             $(DomElements.controllerLeft).hide(),
             $(DomElements.thumbnailController).hide(),
-            DomElements.switchVRButton.style.backgroundImage = "url(textures/vrPress.png)",
+            DomElements.switchVRButton.style.backgroundImage = "url(images/vrPress.png)",
             this.stopHouseSmallViewAutoRotateTimer(),
             this.floorPlanManager.object3D.visible = !1,
             this.stereoHouseManager.object3D.visible = !1;
         else {
             $(DomElements.controllerLeft).show(),
                 $(DomElements.thumbnailController).show(),
-                DomElements.switchVRButton.style.backgroundImage = "url(textures/vr.png)";
+                DomElements.switchVRButton.style.backgroundImage = "url(images/vr.png)";
             for (var t in this.floorPlanSwitchBtnGroup) {
                 var o = this.floorPlanSwitchBtnGroup[t];
                 if (o.isPressed) {

@@ -132,13 +132,13 @@
     width: 36px;
     height: 43px;
     margin: 0 0 0 10px;
-    background-image: url(../textures/thumbnail.png);
+    background-image: url(../images/thumbnail.png);
     background-repeat: no-repeat;
     background-size: contain;
 }
 
 #thumbnail-control-button:hover {
-    background-image: url(../textures/thumbnailPress.png);
+    background-image: url(../images/thumbnailPress.png);
 }
 
 #thumbnail-control-button.phone {
@@ -148,11 +148,11 @@
 }
 
 #thumbnail-control-button.phone.expand {
-    background-image: url(../textures/thumbnailPhone.png);
+    background-image: url(../images/thumbnailPhone.png);
 }
 
 #thumbnail-control-button.phone.collap {
-    background-image: url(../textures/thumbnailPhonePress.png);
+    background-image: url(../images/thumbnailPhonePress.png);
 }
 
 .thumbnail_name {

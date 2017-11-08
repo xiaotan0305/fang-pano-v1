@@ -98,7 +98,7 @@ var PanoramaManager = function () {
             o
     }
     this.createLogoPlane = function () {
-        var e = ResourcesLoader.loadTexture("src/textures/logo.png");
+        var e = ResourcesLoader.loadTexture("src/images/logo.png");
         this.texture = e,
             e.minFilter = THREE.NearestFilter;
         var t = new THREE.PlaneBufferGeometry(PanoramaParams.logoSize, PanoramaParams.logoSize, 1, 1),
@@ -304,7 +304,7 @@ var PanoramaManager = function () {
         else {
             var e = !DomElements.fullScreenButton.isFullScreen;
             DomElements.fullScreenButton.isFullScreen = e,
-                DomElements.fullScreenButton.style.backgroundImage = "url(textures/" + (e ? "exitFullScreen" :
+                DomElements.fullScreenButton.style.backgroundImage = "url(images/" + (e ? "exitFullScreen" :
                     "fullScreen") + ".png)",
                 Util.setFullScreen(e)
         }
@@ -458,7 +458,7 @@ PanoramaManager.prototype = new Sim.Object,
             this.object3D.add(this.camera), !AppParams.isSingleMode) {
             this.hotSpotGroups = {},
                 this.clickedHotSpotGroup = null;
-            var o = ResourcesLoader.loadTexture("src/textures/hotspot_sprite.png");
+            var o = ResourcesLoader.loadTexture("src/images/hotspot_sprite.png");
             for (var a in e.HotSpots) {
                 var i = this.createHotSpotGroup(e.HotSpots[a], o);
                 this.hotSpotGroups[e.HotSpots[a].ID] = i,

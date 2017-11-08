@@ -35,7 +35,7 @@ var HotSpotManager = function () {
                 a
         },
         this.prepareBeamResources = function () {
-            var e = ResourcesLoader.loadTexture("src/textures/hotspot/light.png");
+            var e = ResourcesLoader.loadTexture("src/images/hotspot/light.png");
             e.minFilter = THREE.NearestFilter;
             var t = new THREE.CylinderGeometry(StereoHouseParams.beamRadius, StereoHouseParams.beamRadius,
                 StereoHouseParams.beamHeight, 20, 1, !0);
@@ -55,7 +55,7 @@ var HotSpotManager = function () {
                 t
         },
         this.prepareFeetResources = function () {
-            var e = ResourcesLoader.loadTexture("src/textures/hotspot/feet.png");
+            var e = ResourcesLoader.loadTexture("src/images/hotspot/feet.png");
             return e.minFilter = THREE.NearestFilter, {
                 material: new THREE.MeshBasicMaterial({
                     map: e,
