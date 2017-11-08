@@ -6,6 +6,7 @@ npm-debug.log*
 .history
 # Runtime data
 pids
+dist
 *.pid
 *.seed
 
