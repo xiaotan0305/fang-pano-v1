@@ -14,11 +14,11 @@
     <meta http-equiv="Pragma" content="no-cache" />
     <meta http-equiv="Expires" content="0" />-->
 
-    <link rel="stylesheet" href="stylesheets/thumbnail.css">
-    <link rel="stylesheet" href="stylesheets/index.css">
+    <link rel="stylesheet" href="src/css/thumbnail.css">
+    <link rel="stylesheet" href="src/css/index.css">
 
-    <link rel="shortcut icon" sizes="196x196" href="textures/logo.png">
-    <link rel="apple-touch-icon" href="textures/logo.png">
+    <link rel="shortcut icon" sizes="196x196" href="/src/textures/logo.png">
+    <link rel="apple-touch-icon" href="/src/textures/logo.png">
 
     <!--[if lt IE 9]>
     <script src="js/iefix/html5.js" type="text/javascript"></script>
@@ -31,9 +31,9 @@
 <div id="thumbnail-controller">
     <div id="thumbnail-control-button" class="controller thumbnail_clip"></div>
     <div id="thumbnail-list" class="background-trans">
-        <img id="naviLeft" alt="naviLeft" src="textures/naviLeft.png" class="img-bottom img-opacity" style="display: none;"/>
+        <img id="naviLeft" alt="naviLeft" src="/src/textures/naviLeft.png" class="img-bottom img-opacity" style="display: none;"/>
         <div id="thumbnails" style="display: inline-block; white-space: nowrap;"></div>
-        <img id="naviRight" alt="naviRight" src="textures/naviRight.png" class="img-bottom img-opacity" style="display: none;"/>
+        <img id="naviRight" alt="naviRight" src="/src/textures/naviRight.png" class="img-bottom img-opacity" style="display: none;"/>
     </div>
 </div>
 
@@ -61,9 +61,9 @@
     </div>
 
     <div id="rotationTip" class="loading-trans round-corner centered tip zIndex100" style="padding: 26px 7px 11px 7px; display: none;">
-        <img src="textures/leftArrow.png" style="width: 20px; height: auto; display: inline-block; margin-top: 20px; float: left;"/>
-        <img src="textures/mouse.png" style="width: 20px; height: auto; display: inline-block;"/>
-        <img src="textures/rightArrow.png" style="width: 20px; height: auto; display: inline-block; margin-top: 20px; float: right;"/>
+        <img src="/src/textures/leftArrow.png" style="width: 20px; height: auto; display: inline-block; margin-top: 20px; float: left;"/>
+        <img src="/src/textures/mouse.png" style="width: 20px; height: auto; display: inline-block;"/>
+        <img src="/src/textures/rightArrow.png" style="width: 20px; height: auto; display: inline-block; margin-top: 20px; float: right;"/>
         <h6 style="color: white; ">按住鼠标可旋转</h6>
     </div>
 
@@ -76,7 +76,7 @@
     </div>
 
     <div id="vrStartTip" class="loading-trans radius-div centered tip zIndex100" style="width: 220px; height: 200px;">
-        <img src="textures/VRTip.png" style="width: 129px; height: auto; margin-top: 50px;">
+        <img src="/src/textures/VRTip.png" style="width: 129px; height: auto; margin-top: 50px;">
         <h5 style="color: white; margin-top: 10px;">请将手机放入VR眼镜中</h5>
     </div>
 
@@ -105,12 +105,9 @@
         <div id="loading_tip" style="margin-top: 10px; font-size:12px; color:#fff; height: 17px; line-height:17px;">加载中，请稍候...</div>
     </div>
 </div>
-
-<!--jquery-->
-<script src="js/jquery/jquery.1.9.1.min.js"></script>
-
-<!--vrhouse-->
-<script src="js/release/vrhouseloader.min.js"></script>
-
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/88/three.min.js"></script>
+<script src="dist/pano.min.js"></script>
+<!-- <script src="src/pano.js"></script> -->
 </body>
 </html>
